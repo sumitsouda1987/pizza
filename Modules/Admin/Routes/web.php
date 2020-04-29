@@ -12,7 +12,7 @@
 */
 
 Route::group(['prefix' => 'admin',  'middleware' => 'auth:admin'], function() {
-    Route::get('/', 'DashboardController@index')->name('admin.dashboard');
+    Route::get('/', 'OrderController@index')->name('admin.dashboard');
 
     //Category Controller
 	Route::get('/category','CategoryController@index')->name('admin.category');
@@ -31,5 +31,5 @@ Route::group(['prefix' => 'admin',  'middleware' => 'auth:admin'], function() {
    	Route::delete('/product/{product}','ProductController@destroy')->name('admin.product.delete');
 
    	//Order Controller
-   	Route::get('/dashboard','OrderController@index')->name('admin.order');
+   	Route::get('/dashboard','OrderController@index')->name('admin.dashboard');
 });
